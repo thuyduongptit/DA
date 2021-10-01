@@ -38,20 +38,10 @@ function ProductView({ isMenu, keyTreeActive }) {
 
     // store context
     const {
-        typeModal,
         setTypeModal,
-        visible,
         setVisible,
-        imgFile,
-        setImgFile,
-        videoFile,
-        setVideoFile,
-        IdCategory,
         setIdCategory,
-        dataEdit,
         setDataEdit,
-        content,
-        setContent,
         form,
         refVideoFile,
         refImgFile,
@@ -66,9 +56,7 @@ function ProductView({ isMenu, keyTreeActive }) {
     }, []);
 
     // handle func
-    // const showDrawer = React.useCallback((isValue = false) => setVisible(isValue), [visible]);
     const handleShow = (data) => {
-        console.log('data', data); // MongLV log fix bug
         if (data) {
             setVisible(true);
             setTypeModal('EDIT');
@@ -131,12 +119,12 @@ function ProductView({ isMenu, keyTreeActive }) {
     const typeWidthTable = isMenu ? 'FullScreen' : 'SmallScreen';
 
     // handle func
-    const showDrawer = (data) => {
-        if (refModalStudyProgram.current) {
-            refModalStudyProgram.current.setDataProduct(data);
-            refModalStudyProgram.current.showDrawer(true);
-        }
-    };
+	const showDrawer = (data) => {
+		if (refModalStudyProgram.current) {
+			refModalStudyProgram.current.setDataProduct(data);
+			refModalStudyProgram.current.showDrawer(true);
+		}
+	};
 
     const showDrawerAdd = () => {
         // refCallback.current.showDrawer();
@@ -264,17 +252,7 @@ function ProductView({ isMenu, keyTreeActive }) {
                 type={keyTreeActive}
                 isFullWidth={isMenu}
             />
-            <ModalStudyProgram
-                refCallBack={refModalStudyProgram}
-                dataProduct={dataProduct}
-                setDataProduct={React.useCallback((value = null) => setDataProduct(value), [dataProduct])}
-                visible={visibleStudyProgram}
-                showDrawer={React.useCallback(
-                    (isValue = true) => setVisibleStudyProgram(isValue),
-                    [visibleStudyProgram],
-                )}
-                onClose={React.useCallback((isValue = false) => setVisibleStudyProgram(isValue), [visibleStudyProgram])}
-            />
+			<ModalStudyProgram ref={refModalStudyProgram} />
         </React.Fragment>
     );
 }

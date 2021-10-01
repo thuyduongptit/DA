@@ -20,7 +20,7 @@
     "classnames": "^2.2.6",
     "dotenv-load": "^2.0.0",
     "file-saver": "^2.0.5",
-    "firebase": "^5.8.3",
+    "firebase": "^8.10.0",
     "fs": "0.0.1-security",
     "immutable": "^4.0.0-rc.15",
     "jquery": "^3.5.1",

@@ -9,16 +9,16 @@ import '../styles/content.css';
 import '../styles/reset.css';
 import 'video-react/dist/video-react.css';
 
-import withFirebaseAuth from 'react-with-firebase-auth';
-import * as firebase from 'firebase/app';
-require('firebase/auth');
+// import withFirebaseAuth from 'react-with-firebase-auth';
+// import * as firebase from 'firebase/app';
+// require('firebase/auth');
 // import firebaseConfig from '../config/firebaseConfig';
 
-if (!firebase.apps.length) {
-    // firebase.initializeApp(firebaseConfig);
-} else {
-    // firebase.app(); // if already initialized, use that one
-}
+// if (!firebase.apps.length) {
+//     firebase.initializeApp(firebaseConfig);
+// } else {
+//     firebase.app(); // if already initialized, use that one
+// }
 // context
 import ContextApp from 'context/ContextApp';
 

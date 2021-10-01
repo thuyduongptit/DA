@@ -20,7 +20,6 @@ import MetaView from '../components/MetaView';
 
 // util
 import { TYPE_MENU } from 'util/TypeMenu';
-import { url_base_img } from '../util/TypeUI';
 import { getList } from 'redux/actions/userAction';
 import { useDispatch } from 'react-redux';
 import ModalProductView from '../components/Admin/Product/Modal/ModalProductView';
