@@ -16,10 +16,9 @@
 
 import React from 'react';
 import MetaView from '../../components/MetaView';
-import HeaderUNICAView from '../../components/Header/UNICA/HeaderUNICAView';
-import Footer from '../../components/Footer/Footer';
 
 import CategoryView from '../../components/Content/Category/CategoryView';
+import LayoutApp from '../../components/Layout/LayoutApp';
 // import PropTypes from 'prop-types';
 
 export async function getStaticPaths() {
@@ -36,15 +35,17 @@ function Category({id}) {
     return(
         <div style={{ display: 'flex', flexDirection: 'column' }}>
             <MetaView title={'Danh mục'} />
-            <HeaderUNICAView />
             <CategoryView id={id}/>
-            <Footer />
         </div>
     );
 }
 
-Category.propTypes = {};
-
-Category.defaultProps = {};
+Category.getLayout = function getLayout(page) {
+	return (
+		<LayoutApp>
+			{page}
+		</LayoutApp>
+	)
+};
 
 export default Category;

@@ -7,13 +7,18 @@
  * @university: UTT (Đại học Công Nghệ Giao Thông Vận Tải)
  */
 
-const express = require('express');
+const express = require("express");
 const UserRouter = express.Router();
 
 // container
-const { CREATE, LOGIN, GET_LIST, UPDATE } = require('../controller/user.controller');
+const {
+	CREATE,
+	LOGIN,
+	GET_LIST,
+	UPDATE,
+} = require("../controller/user.controller");
 
-UserRouter.route('/api/user').post(CREATE).get(GET_LIST).put(UPDATE);
-UserRouter.route('/api/user/login').post(LOGIN);
+UserRouter.route("/api/user").post(CREATE).get(GET_LIST).put(UPDATE);
+UserRouter.route("/api/user/login").post(LOGIN);
 
 module.exports = UserRouter;

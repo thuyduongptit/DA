@@ -21,6 +21,7 @@ module.exports = {
         );
     },
     update: function (con, data, callback) {
+		console.log('data', data); // MongLV log fix bug
         con.query(`UPDATE category SET rootId = '${data.rootId}', icon = '${data.icon}', status = '${data.status}', name = '${data.name}', description = '${data.description}', sort_order = '${data.sort_order}' WHERE id = '${data.id}'`, callback);
     },
     getList: function (con, callback) {

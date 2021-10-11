@@ -61,44 +61,47 @@ function ContentUNICAView(prop) {
                     <div className='content_category'>
                         <ul className='content_category-list'>
                             {category.map(
-                                (item) =>
-                                    item.rootId === 1 && (
-                                        <li className='content_category-list-item'>
-                                            <div
-                                                className='content_category-list-item-link'
-                                                onClick={(e) => hanNexPageCategory(e, item)}
-                                            >
-                                                <Avatar
-                                                    size={14}
-                                                    shape='square'
-                                                    icon={<UserOutlined />}
-                                                    src={`${url_base_img}${item.icon}`}
-                                                />
-                                                <p style={{ paddingLeft: 8 }}>{item.name}</p>
-                                            </div>
-                                            <div className='menuhover'>
-                                                <div className='menuhover_row'>
-                                                    <ul>
-                                                        {category.map(
-                                                            (value) =>
-                                                                value.rootId === item.id && (
-                                                                    <li className='menuhover_row-item'>
-                                                                        <div
-                                                                            onClick={(e) =>
-                                                                                hanNexPageCategory(e, value)
-                                                                            }
-                                                                            className='menuhover-link'
-                                                                        >
-                                                                            {value.name}
-                                                                        </div>
-                                                                    </li>
-                                                                ),
-                                                        )}
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    ),
+                                (item) => {
+									if(item.status === 0) return null
+									if(item.rootId === 1) return (
+										<li className='content_category-list-item'>
+											<div
+												className='content_category-list-item-link'
+												onClick={(e) => hanNexPageCategory(e, item)}
+											>
+												<Avatar
+													size={14}
+													shape='square'
+													icon={<UserOutlined />}
+													src={`${url_base_img}${item.icon}`}
+												/>
+												<p style={{ paddingLeft: 8 }}>{item.name}</p>
+											</div>
+											<div className='menuhover'>
+												<div className='menuhover_row'>
+													<ul>
+														{category.map(
+															(value) =>
+																value.rootId === item.id && (
+																	<li className='menuhover_row-item'>
+																		<div
+																			onClick={(e) =>
+																				hanNexPageCategory(e, value)
+																			}
+																			className='menuhover-link'
+																		>
+																			{value.name}
+																		</div>
+																	</li>
+																),
+														)}
+													</ul>
+												</div>
+											</div>
+										</li>
+									)
+									return null;
+								}
                             )}
                         </ul>
                     </div>

@@ -65,7 +65,7 @@ function UploadFileView(props) {
     // Props
     const UpFile = {
         name: 'file',
-        action: `http://localhost:2020/api/file/upload`,
+        action: `http://localhost:2021/api/file/upload`,
         multiple: true,
         onChange: (info) => onChange(info),
     };

@@ -11,6 +11,7 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { Layout, notification, Spin } from 'antd';
+import styled from 'styled-components';
 
 // context
 import ContextApp from '../context/ContextApp';
@@ -30,6 +31,10 @@ import WrapperModalProduct from '../components/Admin/WrapperModalProduct';
 
 // const
 const { Header, Content, Sider } = Layout;
+const HeaderApp = styled(Header) `
+	background-color: transparent;
+	border-color: transparent;
+`
 
 // component
 const ContentView = dynamic(import('../components/Admin/Content/ContentView'), { ssr: false });
@@ -102,9 +107,9 @@ function Admin() {
                 <MenuView setActiveMenu={handleSetActiveMenu} activeMenu={activeMenu} TYPE_MENU={TYPE_MENU} />
             </Sider>
             <Layout className='site-layout'>
-                <Header className='site-layout-background-header' style={{ padding: 0 }}>
+                <HeaderApp className='site-layout-background-header' style={{ padding: 0 }}>
                     <HeaderView activeMenu={activeMenu} />
-                </Header>
+                </HeaderApp>
                 <Content style={{ margin: '0 10px' }}>
                     <ContentView activeMenu={activeMenu} />
                 </Content>

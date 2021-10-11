@@ -59,6 +59,7 @@ function HeaderUNICAView(props) {
         setCode(e.target.value);
     };
     const handleSearchText = (event) => {
+        console.log('event', event); // MongLV log fix bug
         setTextSearch(event.target.value);
     };
 

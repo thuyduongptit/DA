@@ -147,6 +147,7 @@ function ModalUI(props) {
                             <UploadFileView
                                 ref={refUpdateFile}
                                 styles={styles}
+								accept={['image/png', 'image/jpeg']}
                                 Img={{ width: '20px', height: '20px' }}
                             />
                         </div>

@@ -37,15 +37,8 @@ function ProductView({ isMenu, keyTreeActive }) {
     const [dataProduct, setDataProduct] = React.useState(null);
 
     // store context
-    const {
-        setTypeModal,
-        setVisible,
-        setIdCategory,
-        setDataEdit,
-        form,
-        refVideoFile,
-        refImgFile,
-    } = useContext(ContextModalProduct);
+    const { setTypeModal, setVisible, setIdCategory, setDataEdit, form, refVideoFile, refImgFile, setContent } =
+        useContext(ContextModalProduct);
 
     // ref
     const refModalStudyProgram = React.useRef();
@@ -119,22 +112,22 @@ function ProductView({ isMenu, keyTreeActive }) {
     const typeWidthTable = isMenu ? 'FullScreen' : 'SmallScreen';
 
     // handle func
-	const showDrawer = (data) => {
-		if (refModalStudyProgram.current) {
-			refModalStudyProgram.current.setDataProduct(data);
-			refModalStudyProgram.current.showDrawer(true);
-		}
-	};
+    const showDrawer = (data) => {
+        if (refModalStudyProgram.current) {
+            refModalStudyProgram.current.setDataProduct(data);
+            refModalStudyProgram.current.showDrawer(true);
+        }
+    };
 
     const showDrawerAdd = () => {
-        // refCallback.current.showDrawer();
-        // refCallback.current.setContent(null);
-        // categoryObj &&
-        //     categoryObj[myUser.categoryFollow] &&
-        //     categoryObj[myUser.categoryFollow].name &&
-        //     refCallback.current.form.setFieldsValue({
-        //         name_category: categoryObj[myUser.categoryFollow].name,
-        //     });
+        setVisible(true);
+        setContent(null);
+        categoryObj &&
+            categoryObj[myUser.categoryFollow] &&
+            categoryObj[myUser.categoryFollow].name &&
+            form.setFieldsValue({
+                name_category: categoryObj[myUser.categoryFollow].name,
+            });
     };
 
     // JSX
@@ -252,7 +245,7 @@ function ProductView({ isMenu, keyTreeActive }) {
                 type={keyTreeActive}
                 isFullWidth={isMenu}
             />
-			<ModalStudyProgram ref={refModalStudyProgram} />
+            <ModalStudyProgram ref={refModalStudyProgram} />
         </React.Fragment>
     );
 }

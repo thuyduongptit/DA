@@ -31,44 +31,44 @@ const Footer = dynamic(() => import('../../components/Footer/Footer'));
 
 /* Note by MongLV: Server side render */
 export async function getServerSideProps(context) {
-    bluebird.promisifyAll(redis.RedisClient.prototype);
-    const cache = redis.createClient(6379);
-    let dataCache = {};
-    const { params } = context;
-    const id = params.id.toString();
-    await cache.existsAsync(id).then(async (reply) => {
-        if (reply !== 1) {
-            console.log('reply', reply); // MongLV log fix bug
-            // cache miss, need to fetch
-            const { data } = await baseAPI.getAll(url_api.PRODUCT, {
-                id: params.id,
-            });
-            await cache.set(id, JSON.stringify(data), 'EX', 60); // 60s
-            dataCache = data;
-            console.log('dataCache 1:', dataCache); // MongLV log fix bug
-        } else {
-            // cache hit, will get data from redis
-            dataCache = JSON.parse(await cache.getAsync(id));
-            console.log('dataCache 2:', dataCache); // MongLV log fix bug
-        }
-    });
-    return { props: { ...dataCache[0] } };
+	bluebird.promisifyAll(redis.RedisClient.prototype);
+	const cache = redis.createClient(6379);
+	let dataCache = {};
+	const { params } = context;
+	const id = params.id.toString();
+	await cache.existsAsync(id).then(async (reply) => {
+		if (reply !== 1) {
+			console.log('reply', reply); // MongLV log fix bug
+			// cache miss, need to fetch
+			const { data } = await baseAPI.getAll(url_api.PRODUCT, {
+				id: params.id,
+			});
+			await cache.set(id, JSON.stringify(data), 'EX', 60); // 60s
+			dataCache = data;
+			console.log('dataCache 1:', dataCache); // MongLV log fix bug
+		} else {
+			// cache hit, will get data from redis
+			dataCache = JSON.parse(await cache.getAsync(id));
+			console.log('dataCache 2:', dataCache); // MongLV log fix bug
+		}
+	});
+	return { props: { ...dataCache[0] } };
 }
 
 function DetailProduct(props) {
-    const { name, author_id } = props;
-    const { getListUser } = useUserBase();
-    React.useEffect(() => {
-        getListUser({ id: author_id });
-    }, []);
-    return (
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <MetaView title={`${name} - UTT Learning`} />
-            <HeaderUNICAView />
-            <ContentDetail {...props} />
-            <Footer />
-        </div>
-    );
+	const { name, author_id } = props;
+	const { getListUser } = useUserBase();
+	React.useEffect(() => {
+		getListUser({ id: author_id });
+	}, []);
+	return (
+		<div style={{ display: 'flex', flexDirection: 'column' }}>
+			<MetaView title={`${name} - UTT Learning`} />
+			<HeaderUNICAView />
+			<ContentDetail {...props} />
+			<Footer />
+		</div>
+	);
 }
 
 DetailProduct.propTypes = {};

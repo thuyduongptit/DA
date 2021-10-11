@@ -41,7 +41,9 @@ function ContentRight({ itemVideo, id_study_program, product_id }) {
                 >
                     {studyProgramObj[id_study_program].name}
                 </div>
-                <div dangerouslySetInnerHTML={{ __html: studyProgramObj[id_study_program].content }} />
+                <div style={{ margin: '10px 20px' }}>
+                    <div dangerouslySetInnerHTML={{ __html: studyProgramObj[id_study_program].content }} />
+                </div>
             </div>
         );
     return (

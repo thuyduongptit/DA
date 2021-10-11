@@ -36,6 +36,7 @@ const UploadFileView = forwardRef((props, ref) => {
         linkFileUtil,
         setLinkFileUtil,
         setFileListUtil,
+		accept
     } = props;
     const [linkFile, setLinkFile] = React.useState('');
     const [fileList, setFileList] = React.useState([]);
@@ -43,6 +44,22 @@ const UploadFileView = forwardRef((props, ref) => {
     const linkFileView = linkFile ? url_base_img + 'file/' + linkFile : imgDefault;
 
     // handle func
+	function beforeUpload(file) {
+		console.log('file.type', file.type); // MongLV log fix bug
+		if(Array.isArray(accept) && accept.length >=2) {
+			const isJpgOrPng = file.type === accept[0] || file.type === accept[1];
+			if (!isJpgOrPng) {
+				message.error('You can only upload JPG/PNG file!');
+			}
+			// const isLt2M = file.size / 1024 / 1024 < 2;
+			// if (!isLt2M) {
+			// 	message.error('Image must smaller than 2MB!');
+			// }
+			// return isJpgOrPng && isLt2M;
+			return isJpgOrPng;
+		}
+		return true;
+	}
     const onChange = (info) => {
         setFileList(info.fileList);
         setFileListUtil(info.fileList);
@@ -87,7 +104,7 @@ const UploadFileView = forwardRef((props, ref) => {
 
     return (
         <div className={styles.upload_file}>
-            <Upload {...UpFile} fileList={fileList} listType='picture-card'>
+            <Upload {...UpFile} fileList={fileList} listType='picture-card' beforeUpload={beforeUpload} accept={accept.toString()}>
                 {linkFile.length <= 0 ? (
                     <img alt='example' src={linkFileView} style={{ width: Img.width, height: Img.height }} />
                 ) : null}
@@ -106,6 +123,7 @@ UploadFileView.propTypes = {
     linkFileUtil: PropTypes.string,
     fileListUtil: PropTypes.array,
     // refFunc, Img, styles, imgDefault, callback = () => {}
+	accept: PropTypes.array,
 };
 
 UploadFileView.defaultProps = {
@@ -117,5 +135,8 @@ UploadFileView.defaultProps = {
     setFileListUtil: () => {},
     linkFileUtil: '',
     fileListUtil: [],
+	// accept: ['image/png', 'image/jpeg'],
+	// accept: ['video/mp4', 'video/mp4'],
+	accept: [],
 };
 export default React.memo(UploadFileView);

@@ -210,6 +210,7 @@ function ModalProductView({ idCategory }) {
                         <UploadFileView
                             ref={refImgFile}
                             styles={styles}
+							accept={['image/png', 'image/jpeg']}
                             Image={{ width: 260, height: 130 }}
                             callback={setImgFile}
                         />
@@ -222,6 +223,7 @@ function ModalProductView({ idCategory }) {
                         <UploadFileView
                             type={'mp4'}
                             ref={refVideoFile}
+							accept={['video/mp4', 'video/mp4']}
                             styles={styles}
                             Image={{ width: 260, height: 130 }}
                             imgDefault={`${url_base_img}video.png`}

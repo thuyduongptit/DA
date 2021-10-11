@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic';
 import HeaderUNICAView from '../components/Header/UNICA/HeaderUNICAView';
 import Footer from '../components/Footer/Footer';
 // import AccountHome from '../components/Content/AccountHome/AccountHome';
-// import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';s
 
 const AccountHome = dynamic(() => import('../components/Content/AccountHome/AccountHome'));
 

@@ -48,11 +48,6 @@ const tailLayout = {
 	},
 };
 
-// ModalStudyProgram.propTypes = {
-// };
-//
-// ModalStudyProgram.defaultProps = {
-// };
 const ModalStudyProgram = forwardRef((props, ref) => {
 	// hooks
 	const [form] = Form.useForm();
@@ -330,6 +325,7 @@ const ModalStudyProgram = forwardRef((props, ref) => {
 
 				<Form.Item label='Ảnh nền'>
 					<UploadFileView
+						accept={['image/png', 'image/jpeg']}
 						fileListUtil={fileListImg}
 						linkFileUtil={linkFileImg}
 						setLinkFileUtil={setLinkFileImg}
@@ -339,6 +335,7 @@ const ModalStudyProgram = forwardRef((props, ref) => {
 				</Form.Item>
 				<Form.Item label='Video'>
 					<UploadFileView
+						accept={['video/mp4', 'video/mp4']}
 						fileListUtil={fileList}
 						linkFileUtil={linkFile}
 						setLinkFileUtil={setLinkFile}

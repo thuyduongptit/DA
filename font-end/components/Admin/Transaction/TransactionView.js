@@ -63,7 +63,8 @@ function TransactionView() {
                     item.phone.toLowerCase().indexOf(textSearch.toLowerCase()) !== -1 ||
                     `${item.amount}`.toLowerCase().indexOf(textSearch.toLowerCase()) !== -1 ||
                     usersObj[item.user_id].name.toLowerCase().indexOf(textSearch.toLowerCase()) !== -1 ||
-                    usersObj[item.user_id].email.toLowerCase().indexOf(textSearch.toLowerCase()) !== -1,
+                    usersObj[item.user_id].email.toLowerCase().indexOf(textSearch.toLowerCase()) !== -1 ||
+                    item.id.toString().toLowerCase().indexOf(textSearch.toLowerCase()) !== -1,
             );
         else return arr;
     };
@@ -208,11 +209,13 @@ function TransactionView() {
                 <TabPane tab={TYPE_TAB.THANH_CONG} key={TYPE_TAB.THANH_CONG}>
                     <List
                         dataSource={transactionFilterStatus(3)}
-                        renderItem={(item) => (
-                            <List.Item>
-                                <Card title={Title(item)}>{Cart(item)}</Card>
-                            </List.Item>
-                        )}
+                        renderItem={(item) => {
+                            return (
+                                <List.Item>
+                                    <Card title={Title(item)}>{Cart(item)}</Card>
+                                </List.Item>
+                            );
+                        }}
                     />
                 </TabPane>
                 <TabPane tab={TYPE_TAB.HUY_DON} key={TYPE_TAB.HUY_DON}>

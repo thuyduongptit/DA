@@ -10,6 +10,7 @@
 import React, { useContext, useState } from 'react';
 import { Button, Tree } from 'antd';
 import { useDispatch } from 'react-redux';
+import styled from 'styled-components';
 
 // action
 import * as categoryAction from 'redux/actions/categoryAction';
@@ -25,6 +26,38 @@ import ProductView from '../Product/ProductView';
 import useCategoryBase from '../../hooks/LogicData/useCategoryBase';
 import ContextApp from '../../../context/ContextApp';
 import ContextModalProduct from '../../../context/ContextModalProduct';
+
+// style
+const TreeApp = styled(Tree)`
+    .ant-tree-list-holder-inner {
+        font-size: 24px;
+        //@include background;
+        border-radius: 10px;
+        margin: 5px 5px;
+        padding: 5px;
+    }
+    .ant-tree-treenode-switcher-open {
+        margin-bottom: 8px;
+    }
+
+    .ant-tree-title {
+        width: 250px;
+    }
+    .ant-tree-node-content-wrapper {
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+            rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+        padding: 2px 5px;
+    }
+
+    .ant-tree-iconEle {
+        margin-right: 5px;
+    }
+    .ant-tree-node-content-wrapper {
+        display: flex !important;
+        flex-direction: row !important;
+    }
+`;
 
 const CategoryView = ({ refModalProduct }) => {
     // redux
@@ -161,7 +194,7 @@ const CategoryView = ({ refModalProduct }) => {
                     setRootId={_setRootId}
                 />
                 <div className={styles.custom_tree_antd}>
-                    <Tree onSelect={onSelect} treeData={treeData} showIcon draggable />
+                    <TreeApp onSelect={onSelect} treeData={treeData} showIcon draggable />
                 </div>
                 <ProductView keyTreeActive={keyTreeActive} />
             </div>

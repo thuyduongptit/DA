@@ -10,11 +10,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Map } from 'immutable';
-import { EditOutlined, AppstoreAddOutlined, DeleteOutlined } from '@ant-design/icons';
+import {
+	EditOutlined,
+	AppstoreAddOutlined,
+	DeleteOutlined,
+	EyeOutlined,
+	EyeInvisibleOutlined,
+} from '@ant-design/icons';
 import { useDispatch } from 'react-redux';
 
 // action
-import { remove } from 'redux/actions/categoryAction';
+import { put, remove } from 'redux/actions/categoryAction';
 
 // styles
 import styles from './styles/index.module.scss';
@@ -42,10 +48,15 @@ function TitleTreeView({ item, showModalAdd, showModalEdit, isDelete }) {
         event.stopPropagation();
         dispatch(remove(id));
     };
+	const onHidden = (data, event) => {
+		event.stopPropagation();
+		const status = data.status === 1 ? 0 : 1
+		dispatch(put({...data, status}));
+	}  
 
     return (
         <div style={{ width: 'auto' }} className={styles.controller}>
-            <div style={{ fontSize: 15 }}>{item.name}</div>
+            <div style={{ fontSize: 15, textDecorationLine: item.status ? 'none' : 'line-through' }}>{item.name}</div>
             <div style={{ fontSize: '25px' }} className={styles.event}>
                 <div className={styles.event_item} onClick={(event) => showModalAdd(item, event)}>
                     <AppstoreAddOutlined />
@@ -53,6 +64,9 @@ function TitleTreeView({ item, showModalAdd, showModalEdit, isDelete }) {
                 <div className={styles.event_item} onClick={(event) => showModalEdit(item, event)}>
                     <EditOutlined />
                 </div>
+				<div className={styles.event_item} onClick={(event) => onHidden(item, event)}>
+					{item.status ? <EyeInvisibleOutlined /> :<EyeOutlined />}
+				</div>
                 {isDelete && (
                     <div className={styles.event_item} onClick={(event) => onDelete(item.id, event)}>
                         <DeleteOutlined />

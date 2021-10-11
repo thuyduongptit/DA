@@ -9,7 +9,8 @@
 
 import React from 'react';
 // import PropTypes from 'prop-types';
-import style from 'styles/login.module.css';
+import style from 'styles/login.module.scss';
+import styled from 'styled-components';
 import { useRouter } from 'next/router';
 import { message } from 'antd';
 import axios from 'axios';
@@ -20,7 +21,14 @@ import ContextApp from '../context/ContextApp';
 // Component
 import MetaView from '../components/MetaView';
 import { url_api, url_base } from '../util/TypeUI';
-
+import * as PropTypes from 'prop-types';
+import validateEmail from '../util/function/validateEmail';
+import InputValidation from '../designUI/InputFolder/InputValidation';
+// const style
+const InputValidationCustom = styled(InputValidation)`
+    border-radius: 20px;
+    font-size: 18px;
+`;
 const getLoginUser = async (data, dataUser) => {
     try {
         return axios
@@ -75,6 +83,16 @@ function Login(props) {
         e.preventDefault();
         router.push('/singup');
     };
+
+    function handleValidateEmail() {
+        if (email.length === 0) return false;
+        return validateEmail(email);
+    }
+    function handleValidatePass(password) {
+        if (password.length === 0) return false;
+        else if (password.length < 6) return false;
+        return true;
+    }
     React.useEffect(() => {
         user && router.push('/');
     }, [user]);
@@ -92,23 +110,40 @@ function Login(props) {
                                 <h3>ĐĂNG NHẬP</h3>
                             </div>
                             <div className={style.wrap_input}>
-                                <input
+                                <InputValidationCustom
                                     onChange={handleChangeEmail}
-                                    placeholder={'Email tài khoản'}
+                                    visible={!handleValidateEmail(email)}
+                                    value={email}
                                     className={style.input0}
+                                    title={
+                                        email.length > 0
+                                            ? 'Đây phải là một email hoặc số điện thoại'
+                                            : 'Trường này không được để trống'
+                                    }
+                                    placeholder={'Email đăng nhập'}
                                 />
                             </div>
                             <div className={style.wrap_input}>
-                                <input
-                                    type={'password'}
+                                <InputValidationCustom
                                     onChange={handleChangePassword}
+                                    visible={!handleValidatePass(password)}
+                                    value={password}
+                                    className={style.input_password}
+                                    title={
+                                        password.length === 0
+                                            ? 'Mật khẩu không được để trống'
+                                            : password.length <= 6 && 'Mật khẩu không đủ 6 ký tự'
+                                    }
                                     placeholder={'Mật khẩu'}
-                                    className={style.input0}
+                                    type={'password'}
                                 />
                             </div>
-                            <div className={style.title_login} onClick={handleSave}>
+                            <div role={'presentation'} className={style.title_login} onClick={handleSave}>
                                 Đăng nhập
                             </div>
+                            {/*<div role={'presentation'} className={style.title_login} onClick={signInWithGoogle}>*/}
+                            {/*    Đăng nhập Với Google*/}
+                            {/*</div>*/}
                             <div
                                 style={{
                                     display: 'flex',

@@ -1,24 +1,25 @@
 .spin_loading {
-  :global {
-    .ant-spin-spinning {
-      position: fixed;
-      display: inline-block;
-      opacity: 1;
-      top: 50%;
-      left: 50%;
+    :global {
+        .ant-spin-spinning {
+            position: fixed;
+            display: inline-block;
+            opacity: 1;
+            top: 50%;
+            left: 50%;
+        }
     }
-  }
 }
 .logo {
-  font-size: 28px;
-  height: 50px;
+    font-size: 28px;
+    height: 50px;
+	cursor: pointer;
 
-  color: #fb8800;
-  font-weight: bold;
-  //background: blanchedalmond;
-  font-family: "Oswald", sans-serif;
+    color: #fb8800;
+    font-weight: bold;
+    //background: blanchedalmond;
+    font-family: 'Oswald', sans-serif;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

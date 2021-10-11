@@ -70,16 +70,20 @@ function SingUp(props) {
         if (email.length > 0 && password.length > 0 && passwordCheck.length > 0 && phone.length > 0) {
             if (phone.toString().length >= 9 && phone.toString().length <= 11) {
                 if (validateEmail(email)) {
-                    password === passwordCheck
-                        ? postUser(
-                              {
-                                  email: email,
-                                  password: password,
-                                  phone: `${phone}`,
-                              },
-                              setUser,
-                          )
-                        : message.warn('Mật khẩu không khớp nhau');
+                    if (password.length > 5) {
+                        password === passwordCheck
+                            ? postUser(
+                                  {
+                                      email: email,
+                                      password: password,
+                                      phone: `${phone}`,
+                                  },
+                                  setUser,
+                              )
+                            : message.warn('Mật khẩu không khớp nhau');
+                    } else {
+                        message.warn('Mật khẩu phải lớn hơn 5 ký tự');
+                    }
                 } else {
                     message.warn('Đây phải là 1 email');
                 }
