@@ -13,7 +13,7 @@ function Footer() {
                             <span>
                                 <a>
                                     <img
-                                        src={`${url_base_img}123.jpeg`}
+                                        src={`${url_base_img}123.jpg`}
                                         style={{
                                             width: 150,
                                             height: 50,
@@ -45,7 +45,7 @@ function Footer() {
                                 </li>
                                 <li>
                                     <div>
-                                        <span style={{ color: 'white' }}> cskh@utt_learning.vn </span>
+                                        <span style={{ color: 'white' }}> cskh@fbu_learning.vn </span>
                                     </div>
                                 </li>
                                 <li>
@@ -56,10 +56,10 @@ function Footer() {
                             </ul>
                         </div>
                         <div className={style.cot_2}>
-                            <h4 className={style.title_footer}>UTT Learning</h4>
+                            <h4 className={style.title_footer}>FBU Learning</h4>
                             <ul>
                                 <li>
-                                    <a>Giới thiệu về Utt Learning</a>
+                                    <a>Giới thiệu về FBU Learning</a>
                                 </li>
                                 <li>
                                     <a>Câu hỏi thường gặp</a>
@@ -111,10 +111,10 @@ function Footer() {
                             </ul>
                         </div>
                         <div className={style.cot_2}>
-                            <h4 className={style.title_footer}>Địa chỉ Đại học Công Nghệ Giao Thông Vận Tải</h4>
+                            <h4 className={style.title_footer}>TRƯỜNG ĐẠI HỌC TÀI CHÍNH - NGÂN HÀNG HÀ NỘI</h4>
                             <ul>
                                 <iframe
-                                    src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.1956757379703!2d105.79664331494561!3d20.98479198602226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135acc6bdc7f95f%3A0x58ffc66343a45247!2sUniversity%20of%20Transport%20Technology!5e0!3m2!1sen!2s!4v1620999771572!5m2!1sen!2s'
+                                    src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3722.917360690175!2d105.7835017147952!3d21.075962585972828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135aacc69cb4ef3%3A0xc15e246c76fd0b9e!2zxJDhuqFpIEjhu41jIFTDoGkgQ2jDrW5oIE5nw6JuIEjDoG5nIEjDoCBO4buZaQ!5e0!3m2!1sen!2s!4v1653050430133!5m2!1sen!2s'
                                     width={400}
                                     height={225}
                                     // style={border:0;}
@@ -130,7 +130,7 @@ function Footer() {
                 <div className={style.container}>
                     <div className={style.row}>
                         <div style={{ width: 800, color: 'white', marginLeft: 100 }}>
-                            © Công ty cổ phần đào tạo trực tuyến Unica - ĐKKD: 0107695756 - Khóa học trực tuyến dành cho
+                            © Công ty cổ phần đào tạo trực tuyến  FBU Learning - ĐKKD: 0107695756 - Khóa học trực tuyến dành cho
                             người đi làm
                         </div>
                         <div>

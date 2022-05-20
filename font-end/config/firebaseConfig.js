@@ -1,10 +1,9 @@
 /**
  * Copyright 2020 present, Lê Văn Mong.
  * All rights reserved.
- * @author Mongker on 02/10/2021
- * @email: monglv36@gmail.com
- * @student_code: 68DCHT20091
- * @university: UTT (Đại học Công Nghệ Giao Thông Vận Tải)
+ *  on 02/10/2021
+
+ * @university: FBU ( đại học tài chính ngân hàng hà nội)
  */
 const firebaseConfig = {
 	apiKey: 'AIzaSyBo_a0osLrNxPpqqJnz3jwI-SU2_xsb-XE',

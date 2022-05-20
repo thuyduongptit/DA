@@ -1,11 +1,3 @@
-/**
- * Copyright 2020 present, Lê Văn Mong.
- * All rights reserved.
- * @author Mongker on 22/04/2021
- * @email: levanmong.dola.99@gmail.com
- * @student-code: 68DCHT20091
- * @university: UTT (Đại học Công Nghệ Giao Thông Vận Tải)
- */
 // const moment = require('moment'); // require
 // const mysqlTimestamp = moment(Date.now()).format('YYYY-MM-DD HH:mm:ss').toString();
 // var currentTimeInSeconds=Math.floor(Date.now()/1000); //unix timestamp in seconds
@@ -48,7 +40,6 @@ module.exports = {
                 list_product_open = '[]',
                 avatar = ''
                 `;
-		console.log("query", query); // MongLV log fix bug
 		con.query(query, callback);
 	},
 	update: function (con, id, querySQL, callback) {

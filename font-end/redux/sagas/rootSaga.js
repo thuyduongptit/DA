@@ -4,7 +4,7 @@
  * @author Mong_Le_Van on 09/09/2020
  * @email: levanmong.dola.99@gmail.com
  * @student-code: 68DCHT20091
- * @university: UTT (Đại học Công Nghệ Giao Thông Vận Tải)
+ * @university: FBU ( đại học tài chính ngân hàng hà nội)
  */
 
 import { all } from 'redux-saga/effects';

@@ -1,10 +1,10 @@
 /**
  * Copyright 2020 present, Lê Văn Mong.
  * All rights reserved.
- * @author Mongker on 22/04/2021
+ *  on 22/04/2021
  * @email: levanmong.dola.99@gmail.com
  * @student-code: 68DCHT20091
- * @university: UTT (Đại học Công Nghệ Giao Thông Vận Tải)
+ * @university: FBU ( đại học tài chính ngân hàng hà nội)
  */
 
 import React from 'react';
@@ -100,7 +100,7 @@ function SingUp(props) {
         <div className={style.limiter}>
             <div className={style.container_login}>
                 <div className={`${style.text_center} ${style.form_group}`} onClick={() => router.push('/')}>
-                    UTT Learning
+                    FBU Learning
                 </div>
                 <div className={style.login}>
                     <div className={style.form_login}>

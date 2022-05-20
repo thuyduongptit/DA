@@ -1,19 +1,17 @@
 /**
  * Copyright 2020 present, Lê Văn Mong.
  * All rights reserved.
- * @author Mongker on 05/05/2021
- * @email: monglv36@gmail.com
- * @student_code: 68DCHT20091
- * @university: UTT (Đại học Công Nghệ Giao Thông Vận Tải)
+ *  on 05/05/2021
+
+ * @university: FBU ( đại học tài chính ngân hàng hà nội)
  */
 
 /**
  * Copyright 2020 present, Lê Văn Mong.
  * All rights reserved.
- * @author Mongker on 04/05/2021
- * @email: monglv36@gmail.com
- * @student_code: 68DCHT20091
- * @university: UTT (Đại học Công Nghệ Giao Thông Vận Tải)
+ *  on 04/05/2021
+
+ * @university: FBU ( đại học tài chính ngân hàng hà nội)
  */
 
 import React from 'react';

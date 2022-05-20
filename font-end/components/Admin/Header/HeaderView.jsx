@@ -1,12 +1,3 @@
-/**
- * Copyright 2020 present, Lê Văn Mong.
- * All rights reserved.
- * @author Mongker on 01/05/2021
- * @email: monglv36@gmail.com
- * @student_code: 68DCHT20091
- * @university: UTT (Đại học Công Nghệ Giao Thông Vận Tải)
- */
-
 import React from 'react';
 // import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -50,7 +41,7 @@ function HeaderView({ activeMenu }) {
             text = 'Quản lý khóa học';
             break;
         default:
-            text = 'Quản trị hệ thống Unica';
+            text = 'Quản trị hệ thống  FBU Learning';
             break;
     }
 

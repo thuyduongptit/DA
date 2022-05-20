@@ -104,7 +104,7 @@ function ContentDetail(props) {
             <div className={style.container}>
                 <div className={style.breadcumb_detail_course}>
                     <a href={'/'} className={style.a}>
-                        UTT Learning
+                        FBU Learning
                     </a>
                     <DoubleRightOutlined className={style.icon} />
                     <a href={'#'} className={style.a}>

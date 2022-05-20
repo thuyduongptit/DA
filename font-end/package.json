@@ -1,6 +1,5 @@
 {
   "name": "font-end",
-  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "dev": "next dev -p 3000",
@@ -20,7 +19,6 @@
     "classnames": "^2.2.6",
     "dotenv-load": "^2.0.0",
     "file-saver": "^2.0.5",
-    "firebase": "^8.10.0",
     "fs": "0.0.1-security",
     "immutable": "^4.0.0-rc.15",
     "jquery": "^3.5.1",

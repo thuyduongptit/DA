@@ -1,7 +1,7 @@
 /**
  * Copyright 2020 present, Lê Văn Mong.
  * All rights reserved.
- * @author Mongker on 16/04/2021
+ *  on 16/04/2021
  * @email: levanmong.dola.99@gmail.com
  * @phone: +84373668113
  * @slogan: "Mọi thứ đều bắt đầu từ việc nhỏ, những khát vọng phải lớn"
@@ -107,7 +107,7 @@ function HeaderUNICAView(props) {
             <div className={styles.grid}>
                 <div className={styles.header_grid}>
                     <div className={styles.header_logo} onClick={() => router.push('/')}>
-                        <p>UTT Learning</p>
+                        <p> FBU Learning</p>
                     </div>
                     <div className={styles.header_input}>
                         <form className={styles['header_input-form']} action=''>

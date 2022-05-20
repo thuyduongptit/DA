@@ -1,10 +1,9 @@
 /**
  * Copyright 2020 present, Lê Văn Mong.
  * All rights reserved.
- * @author Mongker on 12/05/2021
- * @email: monglv36@gmail.com
- * @student_code: 68DCHT20091
- * @university: UTT (Đại học Công Nghệ Giao Thông Vận Tải)
+ *  on 12/05/2021
+
+ * @university: FBU ( đại học tài chính ngân hàng hà nội)
  */
 
 import React from 'react';
@@ -81,7 +80,7 @@ function MyVideo() {
                     ) : (
                         <React.Fragment>
                             <span>
-                                Chào mừng Lê Văn MONG đến với học viện Online Unica. Nơi bạn có thể học tập, rèn luyện
+                                Chào mừng Lê Văn MONG đến với học viện Online  FBU Learning. Nơi bạn có thể học tập, rèn luyện
                                 các kỹ năng thông qua hơn 2.000 khóa học online được biên tập cẩn thận, chu đáo.
                                 <br /> Bạn muốn tìm kiếm khóa học phù hợp? hãy cho chúng tôi biết nhu cầu và mong muốn
                                 của bạn nhé

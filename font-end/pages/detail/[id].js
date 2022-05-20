@@ -63,7 +63,7 @@ function DetailProduct(props) {
 	}, []);
 	return (
 		<div style={{ display: 'flex', flexDirection: 'column' }}>
-			<MetaView title={`${name} - UTT Learning`} />
+			<MetaView title={`${name} - FBU Learning`} />
 			<HeaderUNICAView />
 			<ContentDetail {...props} />
 			<Footer />

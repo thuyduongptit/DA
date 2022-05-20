@@ -1,10 +1,10 @@
 /**
  * Copyright 2020 present, Lê Văn Mong.
  * All rights reserved.
- * @author Mongker on 06/01/2021
+ *  on 06/01/2021
  * @email: levanmong.dola.99@gmail.com
  * @student_code: 68DCHT20091
- * @university: UTT (Đại học Công Nghệ Giao Thông Vận Tải)
+ * @university: FBU ( đại học tài chính ngân hàng hà nội)
  */
 import { createSelector } from 'reselect';
 const Counts = (state) => state.Counts;

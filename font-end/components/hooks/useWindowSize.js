@@ -4,7 +4,7 @@
  * @author Mai on 14/01/2021
  * @email: sukhacbiet1199@gmail.com
  * @student_code: 68DCHT25114
- * @university: UTT (Đại học Công Nghệ Giao Thông Vận Tải)
+ * @university: FBU ( đại học tài chính ngân hàng hà nội)
  */
 
 import React from 'react';

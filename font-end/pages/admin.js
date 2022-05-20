@@ -1,10 +1,10 @@
 /**
  * Copyright 2020 present, Lê Văn Mong.
  * All rights reserved.
- * @author Mongker on 22/04/2021
+ *  on 22/04/2021
  * @email: levanmong.dola.99@gmail.com
  * @student-code: 68DCHT20091
- * @university: UTT (Đại học Công Nghệ Giao Thông Vận Tải)
+ * @university: FBU ( đại học tài chính ngân hàng hà nội)
  */
 
 import React from 'react';
@@ -93,7 +93,7 @@ function Admin() {
     // JSX
     const ComponentContent = (
         <Layout style={{ minHeight: '100vh' }}>
-            <MetaView title={'Quản trị  UTT Learning'} />
+            <MetaView title={'Quản trị  FBU Learning'} />
             <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
                 {!collapsed && (
                     <div
@@ -101,7 +101,7 @@ function Admin() {
                         onClick={() => router.push('/')}
                         // style={{ background: `url(${url_base_img}utt-big.png) no-repeat` }}
                     >
-                        UTT Learning
+                        FBU Learning
                     </div>
                 )}
                 <MenuView setActiveMenu={handleSetActiveMenu} activeMenu={activeMenu} TYPE_MENU={TYPE_MENU} />

@@ -1,10 +1,10 @@
 /**
  * Copyright 2020 present, Lê Văn Mong.
  * All rights reserved.
- * @author Mongker on 24/11/2020
+ *  on 24/11/2020
  * @email: levanmong.dola.99@gmail.com
  * @student-code: 68DCHT20091
- * @university: UTT (Đại học Công Nghệ Giao Thông Vận Tải)
+ * @university: FBU ( đại học tài chính ngân hàng hà nội)
  */
 
 import React from 'react';
@@ -48,10 +48,10 @@ MetaView.propTypes = {
 
 MetaView.defaultProps = {
     image: 'https://static.unica.vn/media/images/unica-hoctuchuyengia.jpg',
-    title: 'UTT Learning - Học online cùng chuyên gia',
+    title: ' FBU Learning - Học online cùng chuyên gia',
     name: 'Mongker',
     description:
-        'UTT Learning - Hệ thống khóa học trực tuyến dành cho người đi làm với hơn 500.000 học viên đang theo học và 2.000 khóa học từ chuyên gia hàng đầu mọi lĩnh vực',
+        ' FBU Learning - Hệ thống khóa học trực tuyến dành cho người đi làm với hơn 500.000 học viên đang theo học và 2.000 khóa học từ chuyên gia hàng đầu mọi lĩnh vực',
     icon: 'https://static.unica.vn/icon/favicon.ico',
     url: 'https://unica.vercel.app/',
 };

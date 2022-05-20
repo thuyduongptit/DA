@@ -9,16 +9,16 @@ import '../styles/content.css';
 import '../styles/reset.css';
 import 'video-react/dist/video-react.css';
 
-import withFirebaseAuth from 'react-with-firebase-auth';
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import firebaseConfig from '../config/firebaseConfig';
+// import withFirebaseAuth from 'react-with-firebase-auth';
+// import firebase from 'firebase/app';
+// import 'firebase/auth';
+// import firebaseConfig from '../config/firebaseConfig';
 
-if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig);
-} else {
-    firebase.app(); // if already initialized, use that one
-}
+// if (!firebase.apps.length) {
+//     firebase.initializeApp(firebaseConfig);
+// } else {
+//     firebase.app(); // if already initialized, use that one
+// }
 // context
 import ContextApp from 'context/ContextApp';
 
@@ -34,10 +34,10 @@ export function reportWebVitals(metric) {
     }
 }
 
-let firebaseAppAuth = firebase.auth();
-let providers = {
-    googleProvider: new firebase.auth.GoogleAuthProvider(),
-};
+// let firebaseAppAuth = firebase.auth();
+// let providers = {
+//     googleProvider: new firebase.auth.GoogleAuthProvider(),
+// };
 
 function App({ Component, pageProps }) {
     const getLayout = Component.getLayout || ((page) => page);

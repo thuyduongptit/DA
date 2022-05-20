@@ -1,10 +1,9 @@
 /**
  * Copyright 2020 present, Lê Văn Mong.
  * All rights reserved.
- * @author Mongker on 19/03/2021
- * @email: monglv36@gmail.com
- * @student_code: 68DCHT20091
- * @university: UTT (Đại học Công Nghệ Giao Thông Vận Tải)
+ *  on 19/03/2021
+
+ * @university: FBU ( đại học tài chính ngân hàng hà nội)
  */
 
 import React from 'react';
@@ -98,11 +97,11 @@ function Login(props) {
     }, [user]);
     return (
         <React.Fragment>
-            <MetaView title={'Login - Unica'} />
+            <MetaView title={'Login -  FBU Learning'} />
             <div className={style.limiter}>
                 <div className={style.container_login}>
                     <div className={`${style.text_center} ${style.form_group}`} onClick={() => router.push('/')}>
-                        UTT Learning
+                        FBU Learning
                     </div>
                     <div className={style.login}>
                         <div className={style.form_login}>
