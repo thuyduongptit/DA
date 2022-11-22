@@ -39,7 +39,6 @@ const refreshToken = async (req, res) => {
             // gửi token mới về cho người dùng
             return res.status(200).json({ message: 200, accessToken });
         } catch (error) {
-            // Lưu ý trong dự án thực tế hãy bỏ dòng debug bên dưới, mình để đây để debug lỗi cho các bạn xem thôi
             // debug(error);
 
             res.status(200).json({

@@ -1,11 +1,4 @@
-/**
- * Copyright 2020 present, Lê Văn Mong.
- * All rights reserved.
- *  11/01/2021
- * @email: levanmong.dola.99@gmail.com
- * @student_code: 68DCHT20091
- * @university: FBU ( đại học tài chính ngân hàng hà nội)
- */
+
 
 export const GA_TRACKING_ID = 'G-TJXXCXXME2';
 

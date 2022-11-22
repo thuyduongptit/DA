@@ -1,12 +1,3 @@
-/**
- * Copyright 2020 present, Lê Văn Mong.
- * All rights reserved.
- *  on 22/04/2021
- * @email: levanmong.dola.99@gmail.com
- * @student-code: 68DCHT20091
- * @university: FBU ( đại học tài chính ngân hàng hà nội)
- */
-
 import React from 'react';
 // import PropTypes from 'prop-types';
 import style from 'styles/login.module.css';
@@ -100,7 +91,7 @@ function SingUp(props) {
         <div className={style.limiter}>
             <div className={style.container_login}>
                 <div className={`${style.text_center} ${style.form_group}`} onClick={() => router.push('/')}>
-                    FBU Learning
+                    PTIT Learning
                 </div>
                 <div className={style.login}>
                     <div className={style.form_login}>

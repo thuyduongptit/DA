@@ -41,7 +41,7 @@ function HeaderView({ activeMenu }) {
             text = 'Quản lý khóa học';
             break;
         default:
-            text = 'Quản trị hệ thống  FBU Learning';
+            text = 'Quản trị hệ thống  PTIT Learning';
             break;
     }
 

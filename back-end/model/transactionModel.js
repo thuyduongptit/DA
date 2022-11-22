@@ -1,10 +1,3 @@
-/**
- * Copyright 2020 present, Lê Văn Mong.
- * All rights reserved.
- *  on 11/05/2021
-
- * @university: FBU ( đại học tài chính ngân hàng hà nội)
- */
 
 module.exports = {
     create: function (con, querySQL, callback) {
@@ -12,7 +5,7 @@ module.exports = {
     },
     update: function (con, id, querySQL, callback) {
         const query = `UPDATE transaction SET ${querySQL} WHERE id = ${id}`;
-        console.log('query', query); // MongLV log fix bug
+        console.log('query', query); 
         con.query(query, callback);
     },
     getList: function (con, querySQL, callback) {

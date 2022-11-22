@@ -3,9 +3,10 @@ import dynamic from 'next/dynamic';
 // import PropTypes from 'prop-types';
 
 // component
-const HeaderUNICAView = dynamic(() => import('../components/Header/UNICA/HeaderUNICAView'));
-const Footer = dynamic(() => import('../components/Footer/Footer'));
-const CartProduct = dynamic(() => import('../components/Content/CartProduct'));
+const HeaderUNICAView = dynamic(import('../components/Header/UNICA/HeaderUNICAView'), { ssr: false});
+const Footer = dynamic(import('../components/Footer/Footer'), { ssr: false});
+const CartProduct = dynamic(import('../components/Content/CartProduct'), { ssr: false});
+
 function cart() {
     return (
         <div style={{ display: 'flex', flexDirection: 'column' }}>

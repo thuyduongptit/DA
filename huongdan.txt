@@ -1,0 +1,5 @@
+cd .\back-end\ and cd .\font-end\
+npm install
+npm run dev
+npm run build
+npm run start

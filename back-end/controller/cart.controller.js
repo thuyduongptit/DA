@@ -71,7 +71,7 @@ module.exports = {
         if(req.params.id) {
             CartModel.getList(req.con, `id = ${req.params.id}`, function (err, row) {
                 if (err) return res.status(404).json({ message: err });
-                console.log('row', row[0]); // MongLV log fix bug
+                console.log('row', row[0]); 
                 if (row[0].status === 0) {
                     CartModel.delete(req.con, req.params.id, function (err) {
                         if (err) return res.status(404).json({ message: err });

@@ -1,18 +1,3 @@
-/**
- * Copyright 2020 present, Lê Văn Mong.
- * All rights reserved.
- *  on 05/05/2021
-
- * @university: FBU ( đại học tài chính ngân hàng hà nội)
- */
-
-/**
- * Copyright 2020 present, Lê Văn Mong.
- * All rights reserved.
- *  on 04/05/2021
-
- * @university: FBU ( đại học tài chính ngân hàng hà nội)
- */
 
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';

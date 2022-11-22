@@ -1,10 +1,4 @@
-/**
- * Copyright 2020 present, Lê Văn Mong.
- * All rights reserved.
- *  on 13/05/2021
 
- * @university: FBU ( đại học tài chính ngân hàng hà nội)
- */
 
 import React from 'react';
 import { Avatar, Button, Card, List, Tabs } from 'antd';

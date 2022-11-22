@@ -1,11 +1,3 @@
-/**
- * Copyright 2020 present, Lê Văn Mong.
- * All rights reserved.
- *  on 24/11/2020
- * @email: levanmong.dola.99@gmail.com
- * @student-code: 68DCHT20091
- * @university: FBU ( đại học tài chính ngân hàng hà nội)
- */
 
 import React from 'react';
 import Head from 'next/head';

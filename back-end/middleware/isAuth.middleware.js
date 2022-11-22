@@ -1,10 +1,3 @@
-/**
- * Copyright 2020 present,Lê Văn Mong.
- * All rights reserved.
- *  on 02/09/2021
-
- * @university: UTT (Đại học Công Nghệ Giao Thông Vận Tải)
- */
 
 const jwtHelper = require('../helpers/jwt.helper');
 // const debug = console.log.bind(console);
@@ -37,7 +30,6 @@ let isAuth = async (req, res, next) => {
             next();
         } catch (error) {
             // Nếu giải mã gặp lỗi: Không đúng, hết hạn...etc:
-            // Lưu ý trong dự án thực tế hãy bỏ dòng debug bên dưới, mình để đây để debug lỗi cho các bạn xem thôi
             // debug('Error while verify token:', error);
             return res.status(200).json({
                 message: 'Unauthorized',

@@ -1,10 +1,3 @@
-/**
- * Copyright 2020 present, Lê Văn Mong.
- * All rights reserved.
- *  on 02/05/2021
-
- * @university: FBU ( đại học tài chính ngân hàng hà nội)
- */
 
 import React from 'react';
 import { EditOutlined, LockOutlined, UnlockOutlined } from '@ant-design/icons';

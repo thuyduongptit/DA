@@ -13,7 +13,7 @@ module.exports = {
             querySQL.length > 0
                 ? `SELECT * FROM cart WHERE ` + querySQL
                 : `SELECT * FROM cart`;
-        console.log('query', query); // MongLV log fix bug
+        console.log('query', query); 
         con.query(query, callback);
     },
 

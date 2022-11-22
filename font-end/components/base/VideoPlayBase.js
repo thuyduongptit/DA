@@ -1,10 +1,3 @@
-/**
- * Copyright 2020 present, Lê Văn Mong.
- * All rights reserved.
- *  on 11/05/2021
-
- * @university: FBU ( đại học tài chính ngân hàng hà nội)
- */
 
 import React from 'react';
 import { url_base_img } from '../../util/TypeUI';

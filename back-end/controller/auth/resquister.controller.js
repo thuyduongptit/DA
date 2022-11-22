@@ -25,7 +25,7 @@ const createUser = async (req, res, next) => {
 			address: address || "",
 			info: "{}",
 			position: "Học viên",
-			role: "user", // Khởi tạo mặc định là user => quản trị viên sẽ xét thêm cho
+			role: "user", // Khởi tạo mặc định là user 
 			coin: "0",
 			password: password,
 			status_user: "1",

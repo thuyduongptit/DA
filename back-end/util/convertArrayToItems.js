@@ -3,7 +3,7 @@ function convertArrayToItems(array = []) {
     try {
         array.map((item) => {
             if (item.id) {
-                item.id = item.id.toString(); // Chuyển id sang dạng string để dễ đồng bộ với client
+                item.id = item.id.toString(); 
                 items[item.id] = item;
             }
         });

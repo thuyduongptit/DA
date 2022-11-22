@@ -1,10 +1,3 @@
-/**
- * Copyright 2020 present,Lê Văn Mong.
- * All rights reserved.
- *  on 21/09/2021
-
- * @university: UTT (Đại học Công Nghệ Giao Thông Vận Tải)
- */
 
 const UserModel = require('../model/userModel');
 

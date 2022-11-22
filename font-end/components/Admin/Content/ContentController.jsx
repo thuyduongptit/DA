@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import dynamic from 'next/dynamic';
 
 // component
-const CategoryView = dynamic(() => import('../Category/CategoryView'), { ssr: false });
-const ManagementUserView = dynamic(() => import('../ManagementUser/ManagementUserView'), { ssr: false });
-const ProductView = dynamic(() => import('../Product/ProductView'), { ssr: false });
-const TransactionView = dynamic(() => import('../Transaction/TransactionView'), { ssr: false });
+const CategoryView = dynamic(import('../Category/CategoryView'), { ssr: false });
+const ManagementUserView = dynamic(import('../ManagementUser/ManagementUserView'), { ssr: false });
+const ProductView = dynamic(import('../Product/ProductView'), { ssr: false });
+const TransactionView = dynamic(import('../Transaction/TransactionView'), { ssr: false });
 
 // util
 import { TYPE_MENU } from 'util/TypeMenu';

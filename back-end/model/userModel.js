@@ -45,7 +45,7 @@ module.exports = {
 	update: function (con, id, querySQL, callback) {
 		const query = `UPDATE user SET ${querySQL} WHERE id = ${id}`;
 
-		console.log("query", query); // MongLV log fix bug
+		console.log("query", query); 
 		// con.query(`UPDATE category SET rootId = '${data.rootId}', icon = '${data.icon}', status = '${data.status}', name = '${data.name}', description = '${data.description}', sort_order = '${data.sort_order}' WHERE id = '${data.id}'`, callback);
 		con.query(query, callback);
 	},

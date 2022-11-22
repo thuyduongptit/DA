@@ -1,7 +1,6 @@
 const UserModel = require("../model/userModel");
 
 module.exports = {
-	// Đăng nhập
 	LOGIN: function (req, res) {
 		UserModel.checkEmail(req.con, req.body, function (err, rows) {
 			if (err) return res.status(404).json({ message: err });
@@ -12,14 +11,14 @@ module.exports = {
 						.status(200)
 						.json({ message: "Tài khoản đã bị khóa" });
 				if (dataUser.password === req.body.password) {
-					console.log("dataUser.info", dataUser.info); // MongLV log fix bug
+					console.log("dataUser.info", dataUser.info); 
 					let info = {};
 					try {
 						info = JSON.parse(dataUser.info);
 						console.log(
 							"JSON.parse(rows[0].info",
 							JSON.parse(rows[0].info)
-						); // MongLV log fix bug
+						); 
 					} catch (e) {}
 					delete dataUser.info;
 					const dataNew = { ...dataUser, ...info };
@@ -55,7 +54,7 @@ module.exports = {
 				address: address || "",
 				info: "{}",
 				position: "Học viên",
-				role: "user", // Khởi tạo mặc định là user => quản trị viên sẽ xét thêm cho
+				role: "user", // Khởi tạo mặc định là user
 				coin: "0",
 				password: password,
 				status_user: "1",
@@ -127,10 +126,10 @@ module.exports = {
 					}
 				});
 			} catch (e) {
-				console.log("e", e); // MongLV log fix bug
+				console.log("e", e); 
 			}
 		} catch (e) {
-			console.log("e", e); // MongLV log fix bug
+			console.log("e", e); 
 		}
 	},
 
@@ -138,9 +137,6 @@ module.exports = {
 	GET_LIST: function (req, res) {
 		try {
 			let querySQL = "";
-
-			// Mới hỗ trợ phương thức tìm kiếm where =
-			// Sẽ làm thêm các phương thức khác thành base
 			Object.entries(req.query).map((item, index) => {
 				const key = item[0];
 				const value =
@@ -166,11 +162,11 @@ module.exports = {
 						.status(200)
 						.json({ message: "OK", users: rowNew });
 				} catch (e) {
-					console.log("e", e); // MongLV log fix bug
+					console.log("e", e); 
 				}
 			});
 		} catch (e) {
-			console.log("e", e); // MongLV log fix bug
+			console.log("e", e); 
 		}
 	},
 	UPDATE: function (req, res) {
@@ -179,7 +175,7 @@ module.exports = {
 			const id = req.body && req.body.id;
 			const data = { email: req.body.email };
 			const new_password = req.body["new_password"];
-			console.log("new_password", new_password); // MongLV log fix bug
+			console.log("new_password", new_password); 
 			const password = req.body["password"];
 			delete req.body.id;
 			delete req.body.email;
@@ -225,7 +221,7 @@ module.exports = {
 							}
 						} else return res.status(200).json({ message: "Lỗi không xác định email" });
 					} catch (e) {
-						console.log("e", e); // MongLV log fix bug
+						console.log("e", e); 
 					}
 				});
 			} else {
@@ -246,7 +242,7 @@ module.exports = {
 						.json({ message: "Không có dữ liệu nào được gửi lên" });
 			}
 		} catch (e) {
-			console.log("e", e); // MongLV log fix bug
+			console.log("e", e); 
 		}
 	},
 };

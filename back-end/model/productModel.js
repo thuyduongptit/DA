@@ -4,7 +4,7 @@ module.exports = {
     },
     update: function (con, id, querySQL, callback) {
         const query = `UPDATE product SET ${querySQL} WHERE id = ${id}`;
-        console.log('query', query); // MongLV log fix bug
+        console.log('query', query); 
         con.query(query, callback);
     },
     getList: function (con, querySQL, callback) {

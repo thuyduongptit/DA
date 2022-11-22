@@ -1,8 +1,4 @@
-/**
- * Copyright 2020 present, Lê Văn Mong.
- * All rights reserved.
- *  on 01/05/2021
- */
+
 
 import typeAction from 'redux/actions/typeAction';
 import { call, take, put, select } from 'redux-saga/effects';

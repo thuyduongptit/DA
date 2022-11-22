@@ -23,9 +23,9 @@ import { url_base_img } from '../../../util/TypeUI';
 import style from './style.module.scss';
 
 // component lazy
-const CommentDetail = dynamic(() => import('./Comment/CommentDetail'));
-const WachVideoOpen = dynamic(() => import('./WachVideoOpen/WachVideoOpen'));
-const NoiDung = dynamic(() => import('./NoiDungKH/NoiDung'));
+const CommentDetail = dynamic(import('./Comment/CommentDetail'), { ssr: false});
+const WachVideoOpen = dynamic(import('./WachVideoOpen/WachVideoOpen'), { ssr: false});
+const NoiDung = dynamic(import('./NoiDungKH/NoiDung'), { ssr: false});
 
 function ContentDetail(props) {
     let videoRef = null;

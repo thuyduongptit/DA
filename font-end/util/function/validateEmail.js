@@ -1,10 +1,4 @@
-/**
- * Copyright 2020 present,Lê Văn Mong.
- * All rights reserved.
- *  on 14/07/2021
 
- * @university: FBU ( đại học tài chính ngân hàng hà nội)
- */
 
 export default function validateEmail(email) {
     const re =

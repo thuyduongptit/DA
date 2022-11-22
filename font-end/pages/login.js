@@ -1,10 +1,3 @@
-/**
- * Copyright 2020 present, Lê Văn Mong.
- * All rights reserved.
- *  on 19/03/2021
-
- * @university: FBU ( đại học tài chính ngân hàng hà nội)
- */
 
 import React from 'react';
 // import PropTypes from 'prop-types';
@@ -34,10 +27,10 @@ const getLoginUser = async (data, dataUser) => {
             .post(`${url_base}${url_api.USER}/login`, data)
             .then((res) => res.data)
             .then((result) => {
-                console.log('result', result); // MongLV log fix bug
+                console.log('result', result); 
                 // dataUser(res.data['user']);
                 if (result.message === 'OK') {
-                    console.log('message', result.message); // MongLV log fix bug
+                    console.log('message', result.message); 
                     dataUser(result['user']);
                 } else {
                     message.warning(result.message);

@@ -1,10 +1,3 @@
-/**
- * Copyright 2020 present, Lê Văn Mong.
- * All rights reserved.
- *  on 04/05/2021
-
- * @university: FBU ( đại học tài chính ngân hàng hà nội)
- */
 
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -56,6 +49,7 @@ function useUserBase() {
         const { message, users: data } = await baseAPI.getAll(url_api.USER, obj);
         if (message === 'OK') {
             let objData = {};
+            console.log(data);
             data.map((item) => (objData[item.id] = item));
             const newObj = { ...usersObj, ...objData };
             dispatch({

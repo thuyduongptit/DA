@@ -2,7 +2,7 @@ const ProductModel = require("../model/productModel");
 
 module.exports = {
   CREATE: function (req, res) {
-    console.log("123", 123); // MongLV log fix bug
+    console.log("123", 123); 
     let querySQL = "";
     req.body.list_number = "[]";
     Object.entries(req.body).map((item, index) => {

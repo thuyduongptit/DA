@@ -1,11 +1,8 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
-import HeaderUNICAView from '../components/Header/UNICA/HeaderUNICAView';
-import Footer from '../components/Footer/Footer';
-// import AccountHome from '../components/Content/AccountHome/AccountHome';
-// import PropTypes from 'prop-types';s
-
-const AccountHome = dynamic(() => import('../components/Content/AccountHome/AccountHome'));
+const HeaderUNICAView = dynamic(import('../components/Header/UNICA/HeaderUNICAView'), {ssr: false});
+const AccountHome = dynamic(import('../components/Content/AccountHome/AccountHome'), {ssr: false});
+const Footer = dynamic(import('../components/Footer/Footer'), {ssr: false});
 
 function Account() {
     return (
@@ -16,9 +13,5 @@ function Account() {
         </div>
     );
 }
-
-Account.propTypes = {};
-
-Account.defaultProps = {};
 
 export default Account;

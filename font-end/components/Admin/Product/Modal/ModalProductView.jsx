@@ -1,10 +1,4 @@
-/**
- * Copyright 2020 present, Lê Văn Mong.
- * All rights reserved.
- *  on 04/05/2021
 
- * @university: FBU ( đại học tài chính ngân hàng hà nội)
- */
 import React, { useContext } from 'react';
 import { Button, Drawer, Form, Input, Checkbox, InputNumber, message, Select } from 'antd';
 import PropTypes from 'prop-types';

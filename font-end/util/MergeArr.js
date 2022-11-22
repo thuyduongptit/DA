@@ -1,10 +1,4 @@
-/**
- * Copyright 2020 present, Lê Văn Mong.
- * All rights reserved.
- *  on 10/05/2021
 
- * @university: FBU ( đại học tài chính ngân hàng hà nội)
- */
 
 function MergeArr(arr1, arr2) {
     let objArr1 = {};

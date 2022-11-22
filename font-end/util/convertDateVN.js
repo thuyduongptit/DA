@@ -1,8 +1,4 @@
-/**
- * Copyright 2020 present, Lê Văn Mong.
- * All rights reserved.
- *  on 15/07/2021
- */
+
 
 export default function convertDateVN(time_data) {
     try {

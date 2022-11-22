@@ -40,8 +40,6 @@ export function reportWebVitals(metric) {
 // };
 
 function App({ Component, pageProps }) {
-    const getLayout = Component.getLayout || ((page) => page);
-    // hooks
     // const router = useRouter();
     const { getListProduct } = useProductBase();
     const { getListCategory } = useCategoryBase();
@@ -88,18 +86,6 @@ function App({ Component, pageProps }) {
         }
     }, [user]);
 
-    // Note: chưa sử dụng nên tắt đi ( sử dụng cho mục đích quảng cáo )
-    // useEffect(() => {
-    //     const handleRouteChange = (url) => {
-    //         gtag.pageview(url);
-    //     };
-    //     router.events.on('routeChangeComplete', handleRouteChange);
-    //     return () => {
-    //         router.events.off('routeChangeComplete', handleRouteChange);
-    //     };
-    // }, [router.events]);
-    console.log('textSearch', textSearch); // MongLV log fix bug
-
     const valueContextApp = React.useMemo(
         () => ({
             user,
@@ -112,7 +98,6 @@ function App({ Component, pageProps }) {
         }),
         [user, keyTreeActive, textSearch],
     );
-    // const WrappedComponentProps = withFirebaseAuth({ providers, firebaseAppAuth })();
     return (
         <ContextApp.Provider value={valueContextApp}>
             <Component {...pageProps} />
