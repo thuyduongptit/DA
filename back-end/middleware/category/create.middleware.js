@@ -10,7 +10,7 @@ const create = async (req, res, next) => {
             ...req.body,
         };
         await CategoryModel.create(req.con, data, function (err) {
-            if (err) return res.status(404).json({ message: err });
+            if (err) return res.status(200).json({ message: err });
             req.statusCode = 200;
             req.break = true;
             next();

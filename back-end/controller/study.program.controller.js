@@ -21,7 +21,7 @@ module.exports = {
         });
         if (querySQL.length > 0 && req.body && req.body['product_id']) {
             StudyProgramModel.create(req.con, querySQL, function (err) {
-                if (err) return res.status(404).json({ message: err });
+                if (err) return res.status(200).json({ message: err });
                 StudyProgramModel.getList(req.con, querySQLGet, function (err, row) {
                     return res.status(200).json({ message: 'OK', data: row[0] });
                 });
@@ -40,7 +40,7 @@ module.exports = {
                 : (querySQL = querySQL + ' and ' + `${key} = ${value}`);
         });
         StudyProgramModel.getList(req.con, querySQL, function (err, row) {
-            if (err) return res.status(404).json({ message: err });
+            if (err) return res.status(200).json({ message: err });
             return res.status(200).json({ message: 'OK', data: row });
         });
     },

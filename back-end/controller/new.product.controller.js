@@ -10,7 +10,7 @@ module.exports = {
         });
         if (querySQL.length > 0 && req.body && req.body['catalog_id'] && req.body['catalog_id']) {
             ProductModel.create(req.con, querySQL, function (err) {
-                if (err) return res.status(404).json({ message: err });
+                if (err) return res.status(200).json({ message: err });
                 ProductModel.getByName(req.con, req.body.name, function (err, row) {
                     return res.status(200).json({ message: 'OK', data: row[0] });
                 });
@@ -27,7 +27,7 @@ module.exports = {
             index === 0 ? (querySQL = `${key} = ${value}`) : (querySQL = querySQL + ', ' + `${key} = ${value}`);
         });
         ProductModel.getList(req.con, querySQL, function (err, row) {
-            if (err) return res.status(404).json({ message: err });
+            if (err) return res.status(200).json({ message: err });
             return res.status(200).json({ message: 'OK', data: row });
         });
     },

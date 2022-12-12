@@ -21,7 +21,7 @@ module.exports = {
         const querySQLGet = querySQL.replace(/,/g, ' and ');
         if (querySQL.length > 0 && req.body && req.body['product_id'] && req.body['user_id']) {
             CartModel.create(req.con, querySQL, function (err) {
-                if (err) return res.status(404).json({ message: err });
+                if (err) return res.status(200).json({ message: err });
                 CartModel.getList(req.con, querySQLGet, function (err, row) {
                     console.log('row', row); // MongLV log fix bug
                     return res.status(200).json({ message: 'OK', data: row[0] });
@@ -41,7 +41,7 @@ module.exports = {
             index === 0 ? (querySQL = `${key} = ${value}`) : (querySQL = querySQL + ' and ' + `${key} = ${value}`);
         });
         CartModel.getList(req.con, querySQL, function (err, row) {
-            if (err) return res.status(404).json({ message: err });
+            if (err) return res.status(200).json({ message: err });
             if (!isCode) {
                 row.map((item) => {
                     delete item.code;
@@ -70,11 +70,11 @@ module.exports = {
     DELETE: function (req, res) {
         if(req.params.id) {
             CartModel.getList(req.con, `id = ${req.params.id}`, function (err, row) {
-                if (err) return res.status(404).json({ message: err });
+                if (err) return res.status(200).json({ message: err });
                 console.log('row', row[0]); 
                 if (row[0].status === 0) {
                     CartModel.delete(req.con, req.params.id, function (err) {
-                        if (err) return res.status(404).json({ message: err });
+                        if (err) return res.status(200).json({ message: err });
                         return res.status(200).json({ message: 'OK' });
                     });
                 } else {

@@ -7,11 +7,11 @@ module.exports = {
         let querySQL = '';
         const code = req.query.code;
         CartModel.getList(req.con, `code = '${code}'`, function (err, row) {
-            if (err) return res.status(404).json({ message: err });
+            if (err) return res.status(200).json({ message: err });
 
             if (row.length === 1 && row[0].status === 1) {
                 ProductModel.getList(req.con, `id = ${row[0].product_id}`, function (err, row1) {
-                    if (err) return res.status(404).json({ message: err });
+                    if (err) return res.status(200).json({ message: err });
                     if (row.length === 1 && row1[0]) {
                         const dataUpdate = row1[0];
                         const mer_list_number = JSON.parse(row1[0].list_number);

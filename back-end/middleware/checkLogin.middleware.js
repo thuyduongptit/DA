@@ -22,7 +22,7 @@ const checkLogin = async (req, res, next) => {
 				req.con,
 				{ email: req.body.email || req.dataJwtDecoded.email },
 				(err, rows) => {
-					if (err) return res.status(404).json({ message: err });
+					if (err) return res.status(200).json({ message: err });
 
 					if (Array.isArray(rows) && rows.length > 0) {
 						const dataUser = rows[0];
@@ -50,7 +50,7 @@ const checkLogin = async (req, res, next) => {
 			);
 		} else if (req.body.phone || req.dataJwtDecoded.phone) {
 			await UserModel.checkPhone(req.con, req.body, (err, rows) => {
-				if (err) return res.status(404).json({ message: err });
+				if (err) return res.status(200).json({ message: err });
 				if (Array.isArray(rows) && rows.length > 0) {
 					const dataUser = rows[0];
 					if (dataUser.status_user === 0)

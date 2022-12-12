@@ -3,7 +3,7 @@ const UserModel = require("../model/userModel");
 module.exports = {
 	LOGIN: function (req, res) {
 		UserModel.checkEmail(req.con, req.body, function (err, rows) {
-			if (err) return res.status(404).json({ message: err });
+			if (err) return res.status(200).json({ message: err });
 			if (rows.length > 0) {
 				const dataUser = rows[0];
 				if (dataUser.status_user === 0)
@@ -81,7 +81,7 @@ module.exports = {
 							UserModel.create(req.con, data, function (err) {
 								if (err)
 									return res
-										.status(404)
+										.status(200)
 										.json({ message: err });
 								UserModel.checkEmail(
 									req.con,
@@ -89,7 +89,7 @@ module.exports = {
 									function (err, rows) {
 										if (err)
 											return res
-												.status(404)
+												.status(200)
 												.json({ message: err });
 										if (rows.length > 0) {
 											const dataUser = rows[0];
@@ -195,7 +195,7 @@ module.exports = {
 			if (new_password) {
 				UserModel.checkEmail(req.con, data, function (err, rows) {
 					try {
-						if (err) return res.status(404).json({ message: err });
+						if (err) return res.status(200).json({ message: err });
 						if (rows.length > 0) {
 							const dataUser = rows[0];
 							if (dataUser.password === password) {

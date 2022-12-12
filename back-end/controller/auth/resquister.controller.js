@@ -44,7 +44,7 @@ const createUser = async (req, res, next) => {
 
 		if ((email && phone) || req.statusCode === 204) {
 			UserModel.create(req.con, data, function (err) {
-				if (err) return res.status(404).json({ message: err });
+				if (err) return res.status(200).json({ message: err });
 				next();
 			});
 		} else if (req.statusCode === 402) {

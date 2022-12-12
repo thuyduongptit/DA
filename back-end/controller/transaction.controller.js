@@ -31,7 +31,7 @@ module.exports = {
             );
 
             TransactionModel.create(req.con, querySQL, function (err) {
-                if (err) return res.status(404).json({ message: err });
+                if (err) return res.status(200).json({ message: err });
                 TransactionModel.getList(req.con, querySQLGet, function (err, row) {
                     return res.status(200).json({ message: 'OK', data: row[0] });
                 });
@@ -48,7 +48,7 @@ module.exports = {
             index === 0 ? (querySQL = `${key} = ${value}`) : (querySQL = querySQL + ' and ' + `${key} = ${value}`);
         });
         TransactionModel.getList(req.con, querySQL, function (err, row) {
-            if (err) return res.status(404).json({ message: err });
+            if (err) return res.status(200).json({ message: err });
             return res.status(200).json({ message: 'OK', data: row });
         });
     },
@@ -70,7 +70,7 @@ module.exports = {
     },
     DELETE: function (req, res) {
         TransactionModel.delete(req.con, req.params.id, function (err, row) {
-            if (err) return res.status(404).json({ message: err });
+            if (err) return res.status(200).json({ message: err });
             return res.status(200).json({ message: 'OK' });
         });
     },

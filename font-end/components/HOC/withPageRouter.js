@@ -1,5 +1,3 @@
-/
-
 import queryString from 'query-string';
 import { withRouter } from 'next/router';
 

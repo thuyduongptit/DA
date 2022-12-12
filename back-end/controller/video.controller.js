@@ -16,7 +16,7 @@ module.exports = {
         const querySQLGet = querySQL.replace(/,/g, ' and ');
         if (querySQL.length > 0 && req.body && req.body['study_program_id']) {
             VideoModel.create(req.con, querySQL, function (err) {
-                if (err) return res.status(404).json({ message: err });
+                if (err) return res.status(200).json({ message: err });
                 VideoModel.getList(req.con, querySQLGet, function (err, row) {
                     return res.status(200).json({ message: 'OK', data: row[0] });
                 });
@@ -35,7 +35,7 @@ module.exports = {
                 : (querySQL = querySQL + ' and ' + `${key} = ${value}`);
         });
         VideoModel.getList(req.con, querySQL, function (err, row) {
-            if (err) return res.status(404).json({ message: err });
+            if (err) return res.status(200).json({ message: err });
             return res.status(200).json({ message: 'OK', data: row });
         });
     },
@@ -60,7 +60,7 @@ module.exports = {
     },
     DELETE: function (req, res) {
         VideoModel.delete(req.con, req.params.id, function (err, row) {
-            if (err) return res.status(404).json({ message: err });
+            if (err) return res.status(200).json({ message: err });
             return res.status(200).json({ message: 'OK' });
         });
     },
